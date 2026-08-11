@@ -70,8 +70,56 @@ def detect_symbols(img_path):
             "red_px": sub_red,
             "green_px": sub_green,
         })
-    log(f"1단계 완료 - 심볼 {len(symbols)}개 탐지")
+    log(f"1단계-1 완료 - 원시 블록 {len(symbols)}개 탐지")
+    symbols = merge_nearby_symbols(symbols, radius=50)
+    log(f"1단계-2 완료 - 근접 병합 후 심볼 {len(symbols)}개 (같은 물리 심볼이 쪼개진 것을 합침)")
     return arr, symbols
+
+
+def merge_nearby_symbols(symbols, radius=50):
+    """S/L쌍처럼 원래 하나의 심볼인데 원 사이 간격이 커서 별도 블록으로 잡힌 것들을
+    중심점 거리 기준으로 다시 하나로 합친다.
+    실측 결과: 같은 심볼 내부 간격은 ~32px, 서로 다른 심볼 간 최소 간격은 ~85px로
+    뚜렷이 구분되어 50px을 안전한 임계값으로 사용한다."""
+    n = len(symbols)
+    parent = list(range(n))
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+
+    for i in range(n):
+        xi, yi = symbols[i]["center"]
+        for j in range(i + 1, n):
+            xj, yj = symbols[j]["center"]
+            if ((xi - xj) ** 2 + (yi - yj) ** 2) ** 0.5 <= radius:
+                union(i, j)
+
+    groups = {}
+    for i in range(n):
+        groups.setdefault(find(i), []).append(i)
+
+    merged = []
+    for members in groups.values():
+        xs0 = min(symbols[i]["bbox"][0] for i in members)
+        ys0 = min(symbols[i]["bbox"][1] for i in members)
+        xs1 = max(symbols[i]["bbox"][2] for i in members)
+        ys1 = max(symbols[i]["bbox"][3] for i in members)
+        merged.append({
+            "id": len(merged),
+            "bbox": [xs0, ys0, xs1, ys1],
+            "center": [(xs0 + xs1) // 2, (ys0 + ys1) // 2],
+            "red_px": sum(symbols[i]["red_px"] for i in members),
+            "green_px": sum(symbols[i]["green_px"] for i in members),
+        })
+    return merged
 
 
 # ---------- 2단계: 심볼별 텍스트 OCR ----------

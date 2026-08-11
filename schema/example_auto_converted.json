@@ -1,46 +1,27 @@
 {
   "meta": {
-    "title": "동평택/덕풍 (자동 변환 - 검수 필요)",
-    "source": "OCR pipeline v2 -> editor converter",
+    "title": "250415_동평택_덕풍",
+    "source": "run_pipeline.py",
     "note": "선/엣지는 자동 추출되지 않았습니다. needs_review=true 노드는 원본과 대조 확인하세요."
   },
   "nodes": [
     {
-      "id": "UNKNOWN_0",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 612.5,
-        "y": 50.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
       "id": "고덕34113",
-      "type": "switch",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 612.5,
-        "y": 58.0
+        "y": 54.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_2",
+      "id": "UNKNOWN_1",
       "type": "switch",
       "specs": [
         "CNCV-W(100)"
@@ -59,7 +40,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_3",
+      "id": "UNKNOWN_2",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -95,7 +76,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_5",
+      "id": "UNKNOWN_4",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -129,7 +110,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_7",
+      "id": "UNKNOWN_6",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -163,7 +144,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_9",
+      "id": "UNKNOWN_8",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -180,7 +161,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_10",
+      "id": "UNKNOWN_9",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -233,7 +214,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_13",
+      "id": "UNKNOWN_12",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -250,37 +231,33 @@
       ]
     },
     {
-      "id": "UNKNOWN_14",
-      "type": "switch",
+      "id": "고덕12001",
+      "type": "pair_sl",
       "specs": [],
-      "distance_km": 0,
+      "distance_km": 0.1,
       "position": {
         "x": 237.5,
-        "y": 275.0
+        "y": 279.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_15",
-      "type": "switch",
+      "id": "고덕133901",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 462.5,
-        "y": 275.0
+        "y": 279.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -301,7 +278,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_17",
+      "id": "UNKNOWN_16",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -318,143 +295,52 @@
       ]
     },
     {
-      "id": "고덕12001",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0.1,
-      "position": {
-        "x": 237.5,
-        "y": 283.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕133901",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 462.5,
-        "y": 283.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_20",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 237.5,
-        "y": 312.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_21",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 462.5,
-        "y": 312.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_22",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 612.5,
-        "y": 312.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
       "id": "고덕12202",
-      "type": "switch",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0.1,
       "position": {
         "x": 237.5,
-        "y": 320.5
+        "y": 316.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
       "id": "고덕13901-1",
-      "type": "switch",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0.1,
       "position": {
         "x": 462.5,
-        "y": 320.5
+        "y": 316.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
       "id": "고덕34112",
-      "type": "switch",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 612.5,
-        "y": 320.5
+        "y": 316.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_26",
+      "id": "UNKNOWN_20",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -471,7 +357,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_27",
+      "id": "UNKNOWN_21",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -488,7 +374,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_28",
+      "id": "UNKNOWN_22",
       "type": "switch",
       "specs": [
         "CNCV-W(100)"
@@ -526,20 +412,18 @@
       ]
     },
     {
-      "id": "UNKNOWN_30",
-      "type": "switch",
+      "id": "고덕12203",
+      "type": "pair_sl",
       "specs": [],
-      "distance_km": 0,
+      "distance_km": 0.1,
       "position": {
         "x": 237.5,
-        "y": 350.0
+        "y": 354.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -560,30 +444,13 @@
       ]
     },
     {
-      "id": "UNKNOWN_32",
+      "id": "UNKNOWN_26",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 499.8,
         "y": 351.2
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕12203",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0.1,
-      "position": {
-        "x": 237.5,
-        "y": 358.0
       },
       "needs_review": true,
       "state": [
@@ -683,7 +550,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_39",
+      "id": "UNKNOWN_32",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -700,7 +567,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_40",
+      "id": "UNKNOWN_33",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -717,12 +584,12 @@
       ]
     },
     {
-      "id": "고덕12005고드",
+      "id": "고덕12005고덕12",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 121.0,
+        "x": 125.0,
         "y": 391.5
       },
       "needs_review": true,
@@ -734,12 +601,12 @@
       ]
     },
     {
-      "id": "고덕12005고덕12204",
+      "id": "고덕12204고덕52",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 129.0,
+        "x": 162.5,
         "y": 391.5
       },
       "needs_review": true,
@@ -751,12 +618,12 @@
       ]
     },
     {
-      "id": "고덕122004고드",
+      "id": "고덕12101고덕12",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 158.5,
+        "x": 350.0,
         "y": 391.5
       },
       "needs_review": true,
@@ -768,12 +635,12 @@
       ]
     },
     {
-      "id": "고덕12204DS$2206",
+      "id": "고덕12102고덕12",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 166.5,
+        "x": 387.5,
         "y": 391.5
       },
       "needs_review": true,
@@ -785,97 +652,12 @@
       ]
     },
     {
-      "id": "고덕12101고드",
+      "id": "고덕12103고덕522",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 346.0,
-        "y": 391.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕12101고덕12106",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 354.0,
-        "y": 391.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕12102고드",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 383.5,
-        "y": 391.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕12102고덕1210:",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 391.5,
-        "y": 391.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕12103",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 421.0,
-        "y": 391.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕12103고덕52001-",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 429.0,
+        "x": 425.0,
         "y": 391.5
       },
       "needs_review": true,
@@ -906,20 +688,20 @@
       ]
     },
     {
-      "id": "UNKNOWN_52",
-      "type": "switch",
-      "specs": [],
+      "id": "UNKNOWN_40",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV(100)"
+      ],
       "distance_km": 0,
       "position": {
         "x": 462.5,
-        "y": 425.0
+        "y": 429.0
       },
       "needs_review": true,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -942,7 +724,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_54",
+      "id": "UNKNOWN_42",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -959,26 +741,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_55",
-      "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0,
-      "position": {
-        "x": 462.5,
-        "y": 433.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_56",
+      "id": "UNKNOWN_43",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -995,20 +758,20 @@
       ]
     },
     {
-      "id": "UNKNOWN_57",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
+      "id": "고덕13403-15",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV-W(100)"
+      ],
+      "distance_km": 0.04,
       "position": {
         "x": 612.5,
-        "y": 462.5
+        "y": 466.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -1029,7 +792,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_59",
+      "id": "UNKNOWN_46",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -1046,32 +809,13 @@
       ]
     },
     {
-      "id": "UNKNOWN_60",
+      "id": "UNKNOWN_47",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 296.2,
         "y": 466.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕13403-15",
-      "type": "switch",
-      "specs": [
-        "CNCV-W(100)"
-      ],
-      "distance_km": 0.04,
-      "position": {
-        "x": 612.5,
-        "y": 470.5
       },
       "needs_review": true,
       "state": [
@@ -1101,20 +845,20 @@
       ]
     },
     {
-      "id": "UNKNOWN_63",
-      "type": "switch",
-      "specs": [],
+      "id": "고덕13302",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV-W(100)"
+      ],
       "distance_km": 0,
       "position": {
         "x": 462.5,
-        "y": 500.0
+        "y": 504.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -1137,32 +881,13 @@
       ]
     },
     {
-      "id": "UNKNOWN_65",
+      "id": "UNKNOWN_51",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 649.8,
         "y": 501.2
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕13302",
-      "type": "switch",
-      "specs": [
-        "CNCV-W(100)"
-      ],
-      "distance_km": 0,
-      "position": {
-        "x": 462.5,
-        "y": 508.0
       },
       "needs_review": true,
       "state": [
@@ -1192,20 +917,18 @@
       ]
     },
     {
-      "id": "UNKNOWN_68",
-      "type": "switch",
+      "id": "고덕33102-1",
+      "type": "pair_sl",
       "specs": [],
-      "distance_km": 0,
+      "distance_km": 0.18,
       "position": {
         "x": 462.5,
-        "y": 537.5
+        "y": 541.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -1228,30 +951,13 @@
       ]
     },
     {
-      "id": "UNKNOWN_70",
+      "id": "UNKNOWN_55",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 649.8,
         "y": 538.8
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕33102-1",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0.18,
-      "position": {
-        "x": 462.5,
-        "y": 545.5
       },
       "needs_review": true,
       "state": [
@@ -1317,7 +1023,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_75",
+      "id": "UNKNOWN_59",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -1334,7 +1040,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_76",
+      "id": "UNKNOWN_60",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -1351,7 +1057,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_77",
+      "id": "UNKNOWN_61",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -1368,7 +1074,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_78",
+      "id": "UNKNOWN_62",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -1385,37 +1091,35 @@
       ]
     },
     {
-      "id": "UNKNOWN_79",
-      "type": "switch",
-      "specs": [],
+      "id": "고덕13303",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV(100)"
+      ],
       "distance_km": 0,
       "position": {
         "x": 462.5,
-        "y": 612.5
+        "y": 616.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_80",
-      "type": "switch",
+      "id": "고덕3418",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 612.5,
-        "y": 612.5
+        "y": 616.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -1436,7 +1140,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_82",
+      "id": "UNKNOWN_66",
       "type": "switch",
       "specs": [
         "CNCV(400)"
@@ -1455,7 +1159,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_83",
+      "id": "UNKNOWN_67",
       "type": "switch",
       "specs": [],
       "distance_km": 0.1,
@@ -1472,7 +1176,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_84",
+      "id": "UNKNOWN_68",
       "type": "switch",
       "specs": [],
       "distance_km": 0.0,
@@ -1489,7 +1193,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_85",
+      "id": "UNKNOWN_69",
       "type": "switch",
       "specs": [
         "CNCV(325)"
@@ -1508,7 +1212,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_86",
+      "id": "UNKNOWN_70",
       "type": "switch",
       "specs": [],
       "distance_km": 0.1,
@@ -1525,7 +1229,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_87",
+      "id": "UNKNOWN_71",
       "type": "switch",
       "specs": [
         "CNCV(400)"
@@ -1544,12 +1248,12 @@
       ]
     },
     {
-      "id": "고덕4115agi",
+      "id": "고덕4115ie",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 1058.5,
+        "x": 1062.5,
         "y": 616.5
       },
       "needs_review": true,
@@ -1561,62 +1265,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_89",
-      "type": "switch",
-      "specs": [
-        "CNCVES(25)"
-      ],
-      "distance_km": 0,
-      "position": {
-        "x": 1066.5,
-        "y": 616.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕13303",
-      "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0,
-      "position": {
-        "x": 462.5,
-        "y": 620.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕3418",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 612.5,
-        "y": 620.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_92",
+      "id": "UNKNOWN_73",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -1633,7 +1282,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_93",
+      "id": "UNKNOWN_74",
       "type": "switch",
       "specs": [
         "CNCV(100)"
@@ -1652,7 +1301,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_94",
+      "id": "UNKNOWN_75",
       "type": "switch",
       "specs": [
         "CNCV(400)"
@@ -1671,7 +1320,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_95",
+      "id": "UNKNOWN_76",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -1688,7 +1337,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_96",
+      "id": "UNKNOWN_77",
       "type": "switch",
       "specs": [],
       "distance_km": 0.01,
@@ -1724,7 +1373,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_98",
+      "id": "UNKNOWN_79",
       "type": "switch",
       "specs": [],
       "distance_km": 0.597,
@@ -1987,7 +1636,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_113",
+      "id": "UNKNOWN_94",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2038,12 +1687,12 @@
       ]
     },
     {
-      "id": "고덕13303-2고덕:",
+      "id": "고덕13303-2고덕5393",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 421.0,
+        "x": 425.0,
         "y": 654.0
       },
       "needs_review": true,
@@ -2055,12 +1704,12 @@
       ]
     },
     {
-      "id": "고덕13303-2고덕53301-",
+      "id": "고덕3418-1고덕134[",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 429.0,
+        "x": 650.0,
         "y": 654.0
       },
       "needs_review": true,
@@ -2072,12 +1721,12 @@
       ]
     },
     {
-      "id": "고덕3418-1DST",
+      "id": "고덕13403-1?고덕534(",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 646.0,
+        "x": 687.5,
         "y": 654.0
       },
       "needs_review": true,
@@ -2089,12 +1738,12 @@
       ]
     },
     {
-      "id": "고덕3418-1고덕13403-",
+      "id": "고덕34111고덕341",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 654.0,
+        "x": 800.0,
         "y": 654.0
       },
       "needs_review": true,
@@ -2106,12 +1755,12 @@
       ]
     },
     {
-      "id": "고덕13403-1?USS",
+      "id": "고덕34113-1고덕59",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 683.5,
+        "x": 837.5,
         "y": 654.0
       },
       "needs_review": true,
@@ -2123,14 +1772,12 @@
       ]
     },
     {
-      "id": "고덕13403-1?고덕53403-|",
+      "id": "고덕121200-1고덕3?",
       "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0.0,
+      "specs": [],
+      "distance_km": 0,
       "position": {
-        "x": 691.5,
+        "x": 1287.5,
         "y": 654.0
       },
       "needs_review": true,
@@ -2142,148 +1789,12 @@
       ]
     },
     {
-      "id": "고덕34111고덕:",
+      "id": "고덕37102고덕3711",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 796.0,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕34111고덕34113-",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 804.0,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕34113-1고드",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 833.5,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕34113-1DS$3406",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 841.5,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕121200-1고드",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1283.5,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕121200-1고덕3?106",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1291.5,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕37102DSS",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1321.0,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕37102고덕3711-1[",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1329.0,
-        "y": 654.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_130",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1396.0,
+        "x": 1325.0,
         "y": 654.0
       },
       "needs_review": true,
@@ -2300,7 +1811,7 @@
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 1404.0,
+        "x": 1400.0,
         "y": 654.0
       },
       "needs_review": true,
@@ -2312,7 +1823,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_132",
+      "id": "UNKNOWN_105",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2329,41 +1840,39 @@
       ]
     },
     {
-      "id": "UNKNOWN_133",
-      "type": "switch",
-      "specs": [],
+      "id": "고덕13304DSTI",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV(100)"
+      ],
       "distance_km": 0,
       "position": {
         "x": 125.0,
-        "y": 687.5
+        "y": 691.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_134",
-      "type": "switch",
+      "id": "고덕13303-3eeet",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 162.5,
-        "y": 687.5
+        "y": 691.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_135",
+      "id": "UNKNOWN_108",
       "type": "switch",
       "specs": [
         "CNCV(400)"
@@ -2382,54 +1891,52 @@
       ]
     },
     {
-      "id": "UNKNOWN_136",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
+      "id": "UNKNOWN_109",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV(100)"
+      ],
+      "distance_km": 0.26,
       "position": {
         "x": 1025.0,
-        "y": 687.5
+        "y": 691.5
       },
       "needs_review": true,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_137",
-      "type": "switch",
+      "id": "고덕44911고덕37",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 1100.0,
-        "y": 687.5
+        "y": 691.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_138",
-      "type": "switch",
-      "specs": [],
+      "id": "고덕31?-1meres",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV(100)"
+      ],
       "distance_km": 0,
       "position": {
         "x": 1137.5,
-        "y": 687.5
+        "y": 691.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -2469,7 +1976,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_141",
+      "id": "UNKNOWN_114",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2503,7 +2010,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_143",
+      "id": "UNKNOWN_116",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2520,7 +2027,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_144",
+      "id": "UNKNOWN_117",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2537,7 +2044,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_145",
+      "id": "UNKNOWN_118",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2554,7 +2061,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_146",
+      "id": "UNKNOWN_119",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2571,132 +2078,39 @@
       ]
     },
     {
-      "id": "고덕13304DSTI",
-      "type": "switch",
+      "id": "고덕13305",
+      "type": "pair_sl",
       "specs": [
         "CNCV(100)"
       ],
       "distance_km": 0,
       "position": {
         "x": 125.0,
-        "y": 695.5
+        "y": 729.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "고덕13303-3eeet",
-      "type": "switch",
+      "id": "고덕12001-2",
+      "type": "pair_sl",
       "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 162.5,
-        "y": 695.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_149",
-      "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0.26,
-      "position": {
-        "x": 1025.0,
-        "y": 695.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕44911고덕37",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1100.0,
-        "y": 695.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕31?-1meres",
-      "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0,
-      "position": {
-        "x": 1137.5,
-        "y": 695.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_152",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 125.0,
-        "y": 725.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_153",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
+      "distance_km": 0.126,
       "position": {
         "x": 237.5,
-        "y": 725.0
+        "y": 729.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_154",
+      "id": "UNKNOWN_122",
       "type": "switch",
       "specs": [
         "CNCV(400)"
@@ -2715,37 +2129,35 @@
       ]
     },
     {
-      "id": "UNKNOWN_155",
-      "type": "switch",
-      "specs": [],
+      "id": "고덕3114-1",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV(100)"
+      ],
       "distance_km": 0,
       "position": {
         "x": 1025.0,
-        "y": 725.0
+        "y": 729.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_156",
-      "type": "switch",
+      "id": "UNKNOWN_124",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 1137.5,
-        "y": 725.0
+        "y": 729.0
       },
       "needs_review": true,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -2783,7 +2195,7 @@
       ]
     },
     {
-      "id": "UNKNOWN_159",
+      "id": "UNKNOWN_127",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
@@ -2805,7 +2217,7 @@
       "specs": [],
       "distance_km": 0,
       "position": {
-        "x": 646.0,
+        "x": 650.0,
         "y": 729.0
       },
       "needs_review": true,
@@ -2817,109 +2229,20 @@
       ]
     },
     {
-      "id": "고덕13404-2-2",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 654.0,
-        "y": 729.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕13305",
-      "type": "switch",
+      "id": "고덕13305-2",
+      "type": "pair_sl",
       "specs": [
         "CNCV(100)"
       ],
-      "distance_km": 0,
+      "distance_km": 0.4,
       "position": {
         "x": 125.0,
-        "y": 733.0
+        "y": 766.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕12001-2",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0.126,
-      "position": {
-        "x": 237.5,
-        "y": 733.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕3114-1",
-      "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0,
-      "position": {
-        "x": 1025.0,
-        "y": 733.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_165",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1137.5,
-        "y": 733.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_166",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 125.0,
-        "y": 762.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -2942,92 +2265,52 @@
       ]
     },
     {
-      "id": "UNKNOWN_168",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 1025.0,
-        "y": 762.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕13305-2",
-      "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0.4,
-      "position": {
-        "x": 125.0,
-        "y": 770.5
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
       "id": "고덕3716",
-      "type": "switch",
+      "type": "pair_sl",
       "specs": [
         "CNCE/(95)"
       ],
       "distance_km": 0.53,
       "position": {
         "x": 1025.0,
-        "y": 770.5
+        "y": 766.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_171",
-      "type": "switch",
+      "id": "고덕13305-!",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 125.0,
-        "y": 800.0
+        "y": 804.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_172",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
+      "id": "고덕3412",
+      "type": "pair_sl",
+      "specs": [
+        "CNCV(100)"
+      ],
+      "distance_km": 0.67,
       "position": {
         "x": 612.5,
-        "y": 800.0
+        "y": 804.0
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
@@ -3048,83 +2331,28 @@
       ]
     },
     {
-      "id": "고덕13305-!",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 125.0,
-        "y": 808.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕3412",
-      "type": "switch",
-      "specs": [
-        "CNCV(100)"
-      ],
-      "distance_km": 0.67,
-      "position": {
-        "x": 612.5,
-        "y": 808.0
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "UNKNOWN_176",
-      "type": "switch",
+      "id": "고덕3411",
+      "type": "pair_sl",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 612.5,
-        "y": 837.5
+        "y": 841.5
       },
-      "needs_review": true,
+      "needs_review": false,
       "state": [
         1,
-        0,
-        1,
-        0
+        1
       ]
     },
     {
-      "id": "UNKNOWN_177",
+      "id": "UNKNOWN_136",
       "type": "switch",
       "specs": [],
       "distance_km": 0,
       "position": {
         "x": 1024.8,
         "y": 838.8
-      },
-      "needs_review": true,
-      "state": [
-        1,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "id": "고덕3411",
-      "type": "switch",
-      "specs": [],
-      "distance_km": 0,
-      "position": {
-        "x": 612.5,
-        "y": 845.5
       },
       "needs_review": true,
       "state": [
