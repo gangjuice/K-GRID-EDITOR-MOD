@@ -202,6 +202,37 @@ export default function GyetongdoEditor() {
     }));
   };
 
+  // 노드 타입을 바꿀 때, 공통 필드(id/position/specs/distance_km 등)는 최대한 보존하고
+  // 타입별 필수 필드(state/capacity_kva)를 새로 채워 넣는다.
+  const changeNodeType = (newType) => {
+    setData((d) => ({
+      ...d,
+      nodes: d.nodes.map((n) => {
+        if (n.id !== selectedId) return n;
+        const base = { id: n.id, type: newType, position: n.position };
+        if (newType === "switch") {
+          return { ...base, state: n.state && n.state.length === 4 ? n.state : [1, 0, 1, 0], specs: n.specs || [], distance_km: n.distance_km ?? 0 };
+        }
+        if (newType === "pair_sl") {
+          return { ...base, state: [1, 1], specs: n.specs || [], distance_km: n.distance_km ?? 0 };
+        }
+        if (newType === "transformer") {
+          return { ...base, capacity_kva: n.capacity_kva ?? 100, specs: n.specs || [], distance_km: n.distance_km ?? 0 };
+        }
+        if (newType === "customer") {
+          return { ...base, capacity_kva: n.capacity_kva ?? 100 };
+        }
+        return base; // source
+      }),
+      edges: d.edges.map((e) => ({
+        // 단자 구조가 바뀌면 기존 단자 참조가 무효화될 수 있어 안전하게 terminal을 null로 초기화
+        ...e,
+        from: e.from.node === selectedId ? { node: e.from.node, terminal: null } : e.from,
+        to: e.to.node === selectedId ? { node: e.to.node, terminal: null } : e.to,
+      })),
+    }));
+  };
+
   const updateSelectedEdge = (patch) => {
     setData((d) => ({
       ...d,
@@ -254,7 +285,7 @@ export default function GyetongdoEditor() {
   const renderNodeShape = (node) => {
     const meta = TYPE_META[node.type] || TYPE_META.switch;
     const isSel = node.id === selectedId;
-    const ring = isSel ? "#f5c542" : "transparent";
+    const ring = isSel ? "#f5c542" : node.needs_review ? "#f59e0b" : "transparent";
     const defs = getTerminalDefs(node.type);
 
     if (node.type === "source") {
@@ -399,6 +430,11 @@ export default function GyetongdoEditor() {
           <div className="flex-1" />
           <div className="text-[10px] text-slate-600 leading-relaxed border-t border-[#22293380] pt-2">
             노드 {data.nodes.length}개 · 선로 {data.edges.length}개
+            {data.nodes.some((n) => n.needs_review) && (
+              <div className="text-amber-500 mt-1">
+                ⚠ 검수 필요 {data.nodes.filter((n) => n.needs_review).length}개
+              </div>
+            )}
           </div>
         </div>
 
@@ -486,6 +522,22 @@ export default function GyetongdoEditor() {
                   <Trash2 size={14} />
                 </button>
               </div>
+
+              <label className="text-[10px] text-slate-500">타입</label>
+              <select
+                className="bg-[#1a2029] text-sm px-2 py-1.5 rounded outline-none focus:ring-1 focus:ring-[#f5c542]"
+                value={selectedNode.type}
+                onChange={(e) => changeNodeType(e.target.value)}
+              >
+                {Object.entries(TYPE_META).map(([type, meta]) => (
+                  <option key={type} value={type}>{meta.label}</option>
+                ))}
+              </select>
+              {selectedNode.needs_review && (
+                <div className="text-[10px] text-amber-400 bg-amber-400/10 rounded px-2 py-1.5 leading-relaxed">
+                  ⚠ 자동 변환 결과 - 원본 도면과 대조하여 타입/ID/상태를 확인하세요.
+                </div>
+              )}
 
               <label className="text-[10px] text-slate-500">ID / 명칭</label>
               <input
