@@ -5,3 +5,5 @@ resources/pipeline/
 resources/tesseract/
 build_pyinstaller/
 *.log
+__pycache__/
+*.pyc
