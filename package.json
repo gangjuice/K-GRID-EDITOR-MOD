@@ -1,0 +1,38 @@
+{
+  "name": "k-grid-editor-mod",
+  "version": "0.1.0",
+  "description": "배전 계통도(단선도) 편집기",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron:build": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.383.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.3.1"
+  },
+  "build": {
+    "appId": "com.gangjuice.kgrideditor",
+    "productName": "K-GRID Editor",
+    "directories": { "output": "release" },
+    "files": ["dist/**/*", "electron/**/*", "package.json"],
+    "win": {
+      "target": ["portable"]
+    },
+    "portable": {
+      "artifactName": "K-GRID-Editor-${version}-portable.exe"
+    }
+  }
+}
