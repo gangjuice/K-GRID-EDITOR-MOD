@@ -15,8 +15,31 @@ docs/       설계 노트
 
 ## 파이프라인 (pipeline/)
 
-1. `01_symbol_detect.py` — 색상 기반(빨강/초록) 커넥티드 컴포넌트 분석으로 개폐기·변압기 등 심볼 위치를 탐지합니다. 별도 학습 없이도 ADMS 표준 출력물에서는 높은 정확도를 보였습니다.
+**한 번에 실행 (권장)**
+
+```bash
+pip install -r pipeline/requirements.txt
+# Tesseract 본체 + 한글 학습데이터(kor.traineddata)가 시스템에 설치되어 있어야 합니다.
+
+python3 pipeline/run_pipeline.py <입력.png> [출력폴더]
+# 예: python3 pipeline/run_pipeline.py 250415_동평택_덕풍.png ./out
+```
+
+PNG 한 장을 넣으면 출력 폴더에 다음이 생성됩니다.
+
+```
+01_symbols_raw.json      단계1: 색상 기반 심볼 위치 탐지 결과
+02_symbols_ocr.json      단계2: 심볼별 텍스트 OCR + 구조화 파싱 결과
+03_editor_import.json    단계3: 편집기가 바로 읽을 수 있는 최종 JSON  ← 이 파일을 편집기에서 "불러오기"
+```
+
+세 단계를 하나로 합친 스크립트가 `run_pipeline.py`이고, 각 단계를 따로 돌려보며
+디버깅하고 싶을 때는 아래 개별 스크립트를 순서대로 실행해도 동일한 결과가 나옵니다
+(로직은 완전히 동일하며, `run_pipeline.py`가 이 셋을 그대로 내장한 버전입니다).
+
+1. `01_symbol_detect.py` — 색상 기반(빨강/초록) 커넥티드 컴포넌트 분석으로 개폐기·S/L쌍 등 심볼 위치를 탐지합니다.
 2. `02_ocr_extract.py` — 각 심볼 주변 텍스트 영역을 동적으로 크롭해 Tesseract(kor+eng)로 OCR 후, 정규식 기반으로 device_id / 케이블 규격 / 거리 필드를 구조화합니다.
+3. `03_convert_to_editor_format.py` — 2번 결과를 편집기 JSON 스키마로 변환합니다.
 
 **현재 상태(프로토타입 검증 결과)**
 - 심볼 위치 탐지: 신뢰도 높음
