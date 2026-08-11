@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "동평택/덕풍",
+    "source": "ADMS 단선도",
+    "date": "2025-04-15"
+  },
+  "nodes": [
+    { "id": "덕풍CB", "type": "source", "position": { "x": 80, "y": 300 } },
+    {
+      "id": "고덕S2203",
+      "type": "switch",
+      "state": [1, 0, 1, 0],
+      "specs": ["CNCV(325)", "CNCV(325)"],
+      "distance_km": 0.1,
+      "position": { "x": 420, "y": 120 }
+    },
+    {
+      "id": "고덕S3403-2",
+      "type": "transformer",
+      "capacity_kva": 700,
+      "specs": ["TR-CNCE-W/AL(95)"],
+      "distance_km": 0.13,
+      "position": { "x": 620, "y": 120 }
+    },
+    {
+      "id": "비에스에듀타운",
+      "type": "customer",
+      "capacity_kva": 700,
+      "position": { "x": 780, "y": 120 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "덕풍CB",
+      "to": "고덕S2203",
+      "cable": "CNCV(325)",
+      "distance_km": 0.1,
+      "style": "solid"
+    },
+    {
+      "id": "e2",
+      "from": "고덕S2203",
+      "to": "고덕S3403-2",
+      "cable": "TR-CNCE-W/AL(95)",
+      "distance_km": 0.13,
+      "style": "solid"
+    },
+    {
+      "id": "e3",
+      "from": "고덕S3403-2",
+      "to": "비에스에듀타운",
+      "cable": "CNCV(325)",
+      "distance_km": 0.1,
+      "style": "solid"
+    }
+  ]
+}
