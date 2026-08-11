@@ -1,4 +1,7 @@
 node_modules/
 dist/
 release/
+resources/pipeline/
+resources/tesseract/
+build_pyinstaller/
 *.log

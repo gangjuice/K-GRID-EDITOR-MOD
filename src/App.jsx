@@ -1,5 +1,5 @@
-import React, { useState, useRef, useCallback } from "react";
-import { Plus, Trash2, Link2, Download, Upload, ZoomIn, ZoomOut, Move, MousePointer2 } from "lucide-react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
+import { Plus, Trash2, Link2, Download, Upload, ZoomIn, ZoomOut, Move, MousePointer2, ImagePlus, Loader2 } from "lucide-react";
 
 // ---------- 단자 정의 (노드 타입별) ----------
 // switch: 1~4번 단자가 다이아몬드로 배치 (원본 도면과 동일)
@@ -79,6 +79,34 @@ export default function GyetongdoEditor() {
   const [panning, setPanning] = useState(null);
   const svgRef = useRef(null);
   const fileInputRef = useRef(null);
+  const [converting, setConverting] = useState(false);
+  const [convertLog, setConvertLog] = useState([]);
+  const isElectron = typeof window !== "undefined" && window.electronAPI?.isElectron;
+
+  useEffect(() => {
+    if (!isElectron) return;
+    const off = window.electronAPI.onConvertProgress((line) => {
+      setConvertLog((log) => [...log.slice(-6), line.trim()].filter(Boolean));
+    });
+    return off;
+  }, [isElectron]);
+
+  const handleConvertPng = async () => {
+    const imagePath = await window.electronAPI.pickImage();
+    if (!imagePath) return;
+    setConverting(true);
+    setConvertLog([]);
+    try {
+      const result = await window.electronAPI.convertImage(imagePath);
+      setData(normalizeData(result));
+      setSelectedId(null);
+      setSelectedEdgeId(null);
+    } catch (err) {
+      alert("변환 실패: " + err.message);
+    } finally {
+      setConverting(false);
+    }
+  };
 
   const selectedNode = data.nodes.find((n) => n.id === selectedId);
   const selectedEdge = data.edges.find((e) => e.id === selectedEdgeId);
@@ -368,6 +396,16 @@ export default function GyetongdoEditor() {
           onChange={(e) => setData((d) => ({ ...d, meta: { ...d.meta, title: e.target.value } }))}
         />
         <div className="flex-1" />
+        {isElectron && (
+          <button
+            onClick={handleConvertPng}
+            disabled={converting}
+            className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded bg-[#1e3a5f] hover:bg-[#254a75] text-sky-200 disabled:opacity-50"
+          >
+            {converting ? <Loader2 size={13} className="animate-spin" /> : <ImagePlus size={13} />}
+            {converting ? "변환 중..." : "PNG 불러오기 (자동 변환)"}
+          </button>
+        )}
         <button onClick={() => fileInputRef.current.click()} className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded bg-[#1a2029] hover:bg-[#232b37] text-slate-300">
           <Upload size={13} /> 불러오기
         </button>
@@ -440,6 +478,18 @@ export default function GyetongdoEditor() {
 
         {/* Canvas */}
         <div className="flex-1 relative bg-[#0b0f14] overflow-hidden">
+          {converting && (
+            <div className="absolute inset-0 z-10 bg-[#0b0f14]/90 flex items-center justify-center">
+              <div className="bg-[#11161d] border border-[#22293380] rounded-lg p-5 w-96">
+                <div className="flex items-center gap-2 text-sm text-slate-200 mb-3">
+                  <Loader2 size={16} className="animate-spin" /> PNG 분석 중 (심볼 탐지 → OCR → 변환)
+                </div>
+                <div className="text-[10px] text-slate-500 font-mono leading-relaxed max-h-32 overflow-y-auto">
+                  {convertLog.length === 0 ? "시작 중..." : convertLog.map((l, i) => <div key={i}>{l}</div>)}
+                </div>
+              </div>
+            </div>
+          )}
           <svg
             ref={svgRef}
             className="w-full h-full cursor-grab active:cursor-grabbing"

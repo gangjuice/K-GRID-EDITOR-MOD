@@ -21,13 +21,52 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Node dependencies
         run: npm install
+
+      - name: Install Python dependencies (pipeline + PyInstaller)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r pipeline/requirements.txt pyinstaller
+
+      - name: Build pipeline.exe with PyInstaller
+        run: |
+          pyinstaller --onefile --name pipeline pipeline/run_pipeline.py --distpath resources/pipeline --workpath build_pyinstaller --specpath build_pyinstaller --collect-submodules scipy --collect-submodules numpy
+
+      - name: Verify pipeline.exe was created
+        shell: pwsh
+        run: |
+          if (!(Test-Path "resources/pipeline/pipeline.exe")) { throw "pipeline.exe not found" }
+          Get-Item "resources/pipeline/pipeline.exe" | Select-Object Name, Length
+
+      - name: Install Tesseract OCR (choco)
+        run: choco install tesseract --no-progress -y
+
+      - name: Copy Tesseract runtime into resources
+        shell: pwsh
+        run: |
+          $tessDir = "C:\Program Files\Tesseract-OCR"
+          if (!(Test-Path $tessDir)) { throw "Tesseract install not found at $tessDir" }
+          New-Item -ItemType Directory -Force -Path resources/tesseract | Out-Null
+          Copy-Item -Recurse -Force "$tessDir\*" resources/tesseract/
+          Get-ChildItem resources/tesseract | Select-Object Name
+
+      - name: Download Korean traineddata
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path resources/tesseract/tessdata | Out-Null
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tesseract-ocr/tessdata/main/kor.traineddata" -OutFile resources/tesseract/tessdata/kor.traineddata
+          Get-Item resources/tesseract/tessdata/kor.traineddata | Select-Object Name, Length
 
       - name: Build web assets
         run: npm run build
 
-      - name: Build portable EXE
+      - name: Build portable EXE (with bundled pipeline + tesseract)
         run: npm run electron:build
 
       - name: List release output

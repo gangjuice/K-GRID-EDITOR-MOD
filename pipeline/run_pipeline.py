@@ -24,7 +24,12 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 TESSERACT_LANG = "kor+eng"
+# 데스크톱 앱에 번들된 tesseract를 쓸 때는 Electron이 이 환경변수로 실제 경로를 넘겨줍니다.
+TESSERACT_CMD = os.environ.get("PIPELINE_TESSERACT_CMD", "tesseract")
 
 
 def log(msg):
@@ -122,8 +127,8 @@ def ocr_symbols(arr, symbols, tmp_dir):
             crop_im.save(tmp_path)
             try:
                 raw_text = subprocess.run(
-                    ["tesseract", tmp_path, "stdout", "-l", TESSERACT_LANG, "--psm", "6"],
-                    capture_output=True, text=True, timeout=10,
+                    [TESSERACT_CMD, tmp_path, "stdout", "-l", TESSERACT_LANG, "--psm", "6"],
+                    capture_output=True, text=True, encoding="utf-8", timeout=10,
                 ).stdout.strip()
             except Exception as e:
                 raw_text = f"[ERROR: {e}]"

@@ -13,6 +13,22 @@ schema/     자체 JSON 포맷 예시
 docs/       설계 노트
 ```
 
+## 데스크톱 앱 (Electron + 번들 파이프라인)
+
+`v0.1.4-exe`부터 exe 안에 Python 변환 파이프라인과 Tesseract 엔진(한글 데이터 포함)이
+통째로 들어갑니다. 편집기 상단바의 **"PNG 불러오기 (자동 변환)"** 버튼으로 원본
+계통도 PNG를 고르면, 내부적으로 번들된 `pipeline.exe`(PyInstaller로 컴파일된
+`run_pipeline.py`)와 번들된 `tesseract.exe`를 실행해서 바로 캔버스에 결과가 뜹니다.
+Python이나 Tesseract를 따로 설치할 필요가 없습니다.
+
+- 빌드 시 GitHub Actions(windows-latest)에서: PyInstaller로 파이프라인을 단일 exe로
+  컴파일 → choco로 Tesseract 설치 후 런타임 통째로 복사 → 한글 학습데이터
+  다운로드 → 이 모두를 `resources/`에 모아 electron-builder의 `extraResources`로
+  최종 exe에 포함
+- 이 때문에 exe 용량이 커집니다 (수백MB 예상) — 브라우저 없이 완전 오프라인 동작을
+  위한 트레이드오프입니다.
+- 개발 모드(`npm run dev`)에서는 이 기능이 동작하지 않습니다 (패키징된 exe 전용).
+
 ## 파이프라인 (pipeline/)
 
 **한 번에 실행 (권장)**

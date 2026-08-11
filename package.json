@@ -33,6 +33,10 @@
     },
     "portable": {
       "artifactName": "K-GRID-Editor-${version}-portable.exe"
-    }
+    },
+    "extraResources": [
+      { "from": "resources/pipeline", "to": "pipeline" },
+      { "from": "resources/tesseract", "to": "tesseract" }
+    ]
   }
 }
